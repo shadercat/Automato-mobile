@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_machines"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/machines" />
     <item
-        android:id="@+id/navigation_cart"
+        android:id="@+id/navigation_companies"
         android:icon="@drawable/ic_next_week_black_24dp"
         android:title="@string/companies" />
     <item
-        android:id="@+id/navigation_orders"
+        android:id="@+id/navigation_actions"
         android:icon="@drawable/ic_build_black_24dp"
         android:title="@string/actions" />
     <item
-        android:id="@+id/navigation_setting"
+        android:id="@+id/navigation_account"
         android:icon="@drawable/ic_person_black_24dp"
         android:title="@string/account" />
 </menu>
