@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Automato</string>
+    <string name="machines">Апарати</string>
+    <string name="companies">Компанії</string>
+    <string name="actions">Дії</string>
+    <string name="account">Акаунт</string>
+</resources>
