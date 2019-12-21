@@ -4,4 +4,13 @@
     <string name="companies">Компанії</string>
     <string name="actions">Дії</string>
     <string name="account">Акаунт</string>
+    <string name="email">Електрона пошта</string>
+    <string name="password">Пароль</string>
+    <string name="forgotPassword">Забули пароль</string>
+    <string name="login">Увійти</string>
+    <string name="createAccount">Створити акаунт</string>
+    <string name="clickToExit">Для виходу нажміть ще раз</string>
+    <string name="title_activity_login">Automato</string>
+    <string name="wrongLogData">Неправильний пароль або електрона пошта</string>
+    <string name="downloadError">Помилка при отриманні даних з серверу</string>
 </resources>
