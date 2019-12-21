@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MacInformation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:id="@+id/bottom_container_favouriteAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="5dp"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/back_arrow_info"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="@string/macInfo"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/mac_name_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/infoAcivity_sample"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:id="@+id/mac_id_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:text="@string/infoAcivity_sample"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="19sp" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:minHeight="60dp"
+                    android:rowCount="1">
+
+                    <TextView
+                        android:id="@+id/state_info"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:layout_margin="5dp"
+                        android:padding="12dp"
+                        android:text="@string/infoAcivity_sample" />
+
+                    <TextView
+                        android:id="@+id/prod_state_info"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="0dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:layout_margin="5dp"
+                        android:padding="12dp"
+                        android:text="@string/infoAcivity_sample" />
+                </GridLayout>
+
+                <Button
+                    android:id="@+id/resolve_info"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resolveWarnings" />
+            </LinearLayout>
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/logs"
+                android:textAlignment="center" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/propositionlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/list_background"
+                android:padding="2dp"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbars="vertical"
+                app:layoutManager="LinearLayoutManager" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

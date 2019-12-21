@@ -1,11 +1,10 @@
 package shadercat.automato;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,14 +51,15 @@ public class MachinesFragment extends Fragment implements SnackbarMessage.Snackb
             @Override
             public void onChanged(List<Machine> machines) {
                 machinesList = machines;
-                Log.e("DEV", "get data from view model: " + machines.size());
                 adapter.setList(machinesList);
             }
         });
         adapter.setOnClickListener(new MachineListAdapter.ActionHandler() {
             @Override
             public void OnClick(int position) {
-                Toast.makeText(getContext(), "click on " + position, Toast.LENGTH_LONG).show();
+                Intent mac_info = new Intent(getContext(), MacInformation.class);
+                mac_info.putExtra(MacInformation.MAC_ID_EXTRA, machinesList.get(position).getMacId());
+                startActivity(mac_info);
             }
         });
 

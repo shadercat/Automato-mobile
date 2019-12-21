@@ -6,5 +6,6 @@ public class ConstantValues {
     //static final String MainUrl = "http://192.168.1.148:3000/";
     static final String MainUrl = "https://automato-backend.herokuapp.com/";
     static final String getMachines = "api/machines";
-
+    static final String getMachineInfo = "api/machine";
+    static final String getCompanies = "company/list";
 }

@@ -9,4 +9,8 @@ public class RequestParamsFactory {
         params.put("password", password);
         return params;
     }
+
+    public static RequestParams getMachineInfo(String mac_id) {
+        return new RequestParams("mac_id", mac_id);
+    }
 }
