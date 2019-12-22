@@ -1,7 +1,5 @@
 package shadercat.automato;
 
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -33,16 +31,13 @@ public class MachinesViewModel extends ViewModel {
     }
 
     private void loadData() {
-        Log.e("DEV", "load data");
         HttpClient.get(ConstantValues.getMachines, null, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 if (ResponseHandler.IsSuccessed(response)) {
-                    Log.e("DEV", "success getData");
 //                    snackbar.setValue(R.string.downloadError);
                     machines.postValue(ResponseHandler.GetMachines(response));
                 } else {
-                    Log.e("DEV", "fail getData");
 //                    snackbar.setValue(R.string.downloadError);
                 }
             }
