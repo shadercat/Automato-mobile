@@ -10,6 +10,8 @@
     <color name="colorLightGreen">#40E651</color>
     <color name="colorTouch">#5ED81B60</color>
     <color name="colorGray">#525252</color>
+    <color name="colorLightGray">#B9B9B9</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorLightBlack">#212529</color>
     <color name="colorWarning">#C62828</color>
 </resources>

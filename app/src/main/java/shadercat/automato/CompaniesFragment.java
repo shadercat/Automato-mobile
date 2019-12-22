@@ -1,10 +1,10 @@
 package shadercat.automato;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -58,7 +58,9 @@ public class CompaniesFragment extends Fragment {
         adapter.setOnClickListeners(new CompanyListAdapter.ActionHandler() {
             @Override
             public void onClick(int position) {
-                Toast.makeText(getContext(), "click on " + position, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getContext(), CompanyInfo.class);
+                intent.putExtra(CompanyInfo.COMP_EMAIL_EXTRA, companies.get(position).getEmail());
+                startActivity(intent);
             }
         });
     }

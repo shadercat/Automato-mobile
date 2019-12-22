@@ -13,4 +13,8 @@ public class RequestParamsFactory {
     public static RequestParams getMachineInfo(String mac_id) {
         return new RequestParams("mac_id", mac_id);
     }
+
+    public static RequestParams getCompanyInfo(String email) {
+        return new RequestParams("email", email);
+    }
 }

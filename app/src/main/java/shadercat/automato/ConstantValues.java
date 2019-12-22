@@ -8,4 +8,5 @@ public class ConstantValues {
     static final String getMachines = "api/machines";
     static final String getMachineInfo = "api/machine";
     static final String getCompanies = "company/list";
+    static final String getCompanyInfo = "company/info";
 }

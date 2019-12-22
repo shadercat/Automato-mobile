@@ -10,5 +10,5 @@
         android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:contentDescription="Logo"
-        android:src="@drawable/logo" />
+        android:src="@drawable/ic_filter_tilt_shift_black_24dp" />
 </RelativeLayout>
