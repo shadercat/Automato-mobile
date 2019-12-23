@@ -9,4 +9,6 @@ public class ConstantValues {
     static final String getMachineInfo = "api/machine";
     static final String getCompanies = "company/list";
     static final String getCompanyInfo = "company/info";
+    static final String getUserInfo = "api/user";
+    static final String logout = "users/logout";
 }

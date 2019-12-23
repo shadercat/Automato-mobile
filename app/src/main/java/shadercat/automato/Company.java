@@ -8,6 +8,7 @@ public class Company {
     String number;
     String location;
     String createTime;
+    String type;
 
     public Company() {
         this.name = "";
@@ -73,5 +74,13 @@ public class Company {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

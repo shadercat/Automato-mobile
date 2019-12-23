@@ -98,4 +98,25 @@ public class ResponseHandler {
         }
         return comp;
     }
+
+    public static Company GetUserCompany(JSONObject object) {
+        Company comp = new Company();
+        try {
+            JSONArray objectArr = object.getJSONArray("data");
+            if (objectArr.length() != 0) {
+                JSONObject ob = objectArr.getJSONObject(0);
+                comp.setName(ob.getString("name"));
+                comp.setEmail(ob.getString("email"));
+                comp.setType(ob.getString("position_type"));
+                comp.setCompDescry(ob.getString("comp_description"));
+                comp.setCreateTime(ob.getString("create_time"));
+                JSONObject ob2 = ob.getJSONObject("addData");
+                comp.setLocation(ob2.getString("location"));
+                comp.setNumber(ob2.getString("number"));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return comp;
+    }
 }

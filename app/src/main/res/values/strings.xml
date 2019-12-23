@@ -19,9 +19,18 @@
     <string name="logs">Логи</string>
     <string name="resolveWarnings">Вирішити всі попередження</string>
     <string name="placeholderMacId">Mac_id: %1$s</string>
+    <string name="ph_type">Тип акаунту: %1$s</string>
+    <string name="ph_regDate">Дата реєстрації: %1$s</string>
+    <string name="ph_email">Електрона пошта: %1$s</string>
+    <string name="ph_macNum">Кількість апаратів: %1$s</string>
+    <string name="ph_phoneNum">Номер телефону: %1$s</string>
+    <string name="ph_location">Місцезнаходження: %1$s</string>
+    <string name="ph_descry">Додаткова інформація: %1$s</string>
     <string name="backArrow">Кнопка Назад</string>
     <string name="phoneNumber">Номер телефону</string>
     <string name="location">Місцезнаходження</string>
     <string name="additionalInfo">Додаткова інформація</string>
     <string name="regData">Дата реєстрації</string>
+    <string name="addMac">Додати апарат</string>
+    <string name="exit">Вийти</string>
 </resources>
