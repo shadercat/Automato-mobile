@@ -11,4 +11,9 @@ public class ConstantValues {
     static final String getCompanyInfo = "company/info";
     static final String getUserInfo = "api/user";
     static final String logout = "users/logout";
+    static final String newMac = "machine/create";
+    static final String delMac = "machines/delete";
+    static final String bindMac = "api/bindmachine";
+    static final String unbindMac = "api/unbindmachine";
+    static final String resLogs = "machine/resolve";
 }

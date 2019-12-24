@@ -43,4 +43,8 @@
     <string name="add">Додати</string>
     <string name="bind">Прив\'язати</string>
     <string name="unbind">Відв\'язати</string>
+    <string name="name">Ім\'я</string>
+    <string name="opSuccess">Операція прошла успішно</string>
+    <string name="opFail">Виникла якась помилка</string>
+    <string name="sendReq">Запрос відправлений</string>
 </resources>

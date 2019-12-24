@@ -10,10 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class ActionFragment extends Fragment implements View.OnClickListener {
 
@@ -110,7 +115,16 @@ public class ActionFragment extends Fragment implements View.OnClickListener {
                     public void onClick(DialogInterface dialog, int which) {
                         final String name = macId.getText().toString().trim();
                         final String code = codeMac.getText().toString().trim();
-                        Toast.makeText(getContext(), name + " " + code, Toast.LENGTH_SHORT).show();
+                        HttpClient.delete(ConstantValues.delMac, RequestParamsFactory.standardMachine(name, code), new JsonHttpResponseHandler() {
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                if (ResponseHandler.IsSuccessed(response)) {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opSuccess), addMac);
+                                } else {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opFail), addMac);
+                                }
+                            }
+                        });
                     }
                 });
         AlertDialog alert = builder.create();
@@ -120,16 +134,27 @@ public class ActionFragment extends Fragment implements View.OnClickListener {
     private void AddDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(getString(R.string.addMac));
-        View inflater = this.getLayoutInflater().inflate(R.layout.dialog_del_alert, null);
+        View inflater = this.getLayoutInflater().inflate(R.layout.dialog_add_alert, null);
         final EditText macId = inflater.findViewById(R.id.getMacId);
         final EditText codeMac = inflater.findViewById(R.id.getCode);
+        final EditText name = inflater.findViewById(R.id.getName);
         builder.setView(inflater)
                 .setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        final String name = macId.getText().toString().trim();
+                        final String mac_id = macId.getText().toString().trim();
                         final String code = codeMac.getText().toString().trim();
-                        Toast.makeText(getContext(), name + " " + code, Toast.LENGTH_SHORT).show();
+                        final String mac_name = name.getText().toString().trim();
+                        HttpClient.put(ConstantValues.newMac, RequestParamsFactory.newMachine(mac_id, code, mac_name), new JsonHttpResponseHandler() {
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                if (ResponseHandler.IsSuccessed(response)) {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opSuccess), addMac);
+                                } else {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opFail), addMac);
+                                }
+                            }
+                        });
                     }
                 });
         AlertDialog alert = builder.create();
@@ -148,7 +173,16 @@ public class ActionFragment extends Fragment implements View.OnClickListener {
                     public void onClick(DialogInterface dialog, int which) {
                         final String name = macId.getText().toString().trim();
                         final String code = codeMac.getText().toString().trim();
-                        Toast.makeText(getContext(), name + " " + code, Toast.LENGTH_SHORT).show();
+                        HttpClient.post(ConstantValues.bindMac, RequestParamsFactory.standardMachine(name, code), new JsonHttpResponseHandler() {
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                if (ResponseHandler.IsSuccessed(response)) {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opSuccess), addMac);
+                                } else {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opFail), addMac);
+                                }
+                            }
+                        });
                     }
                 });
         AlertDialog alert = builder.create();
@@ -167,7 +201,16 @@ public class ActionFragment extends Fragment implements View.OnClickListener {
                     public void onClick(DialogInterface dialog, int which) {
                         final String name = macId.getText().toString().trim();
                         final String code = codeMac.getText().toString().trim();
-                        Toast.makeText(getContext(), name + " " + code, Toast.LENGTH_SHORT).show();
+                        HttpClient.post(ConstantValues.unbindMac, RequestParamsFactory.standardMachine(name, code), new JsonHttpResponseHandler() {
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                if (ResponseHandler.IsSuccessed(response)) {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opSuccess), addMac);
+                                } else {
+                                    ThematicSnackbar.SnackbarTextShow(getString(R.string.opFail), addMac);
+                                }
+                            }
+                        });
                     }
                 });
         AlertDialog alert = builder.create();
@@ -184,7 +227,7 @@ public class ActionFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         final String name = macId.getText().toString().trim();
-                        Toast.makeText(getContext(), name, Toast.LENGTH_SHORT).show();
+                        ThematicSnackbar.SnackbarTextShow(getString(R.string.sendReq), addMac);
                     }
                 });
         AlertDialog alert = builder.create();

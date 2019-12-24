@@ -42,6 +42,16 @@ public class MacInformation extends AppCompatActivity {
             }
         });
         resolve = findViewById(R.id.resolve_info);
+        resolve.setEnabled(false);
+        resolve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HttpClient.post(ConstantValues.resLogs, RequestParamsFactory.resolveLog(mac_id.getText().toString()), new JsonHttpResponseHandler() {
+
+                });
+                ThematicSnackbar.SnackbarTextShow(getString(R.string.sendReq), mac_name);
+            }
+        });
         backArrow.setImageResource(R.drawable.ic_filter_tilt_shift_black_24dp);
 
         final Animation logo_anim1 = AnimationUtils.loadAnimation(this, R.anim.rotate_logo);
@@ -57,7 +67,7 @@ public class MacInformation extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 if (ResponseHandler.IsSuccessed(response)) {
-                    Machine mac = ResponseHandler.GetMachine(response);
+                    final Machine mac = ResponseHandler.GetMachine(response);
                     mac_name.setText(mac.getName());
                     mac_id.setText(getString(R.string.placeholderMacId, mac.getMacId()));
                     String stat = mac.getState();
@@ -68,6 +78,8 @@ public class MacInformation extends AppCompatActivity {
                     prod_sate.setBackgroundColor(getColor(prodSt.equals("normal") ? R.color.colorDarkGreen : R.color.colorGray));
                     backArrow.setImageResource(R.drawable.ic_arrow_back_black_24dp);
                     backArrow.startAnimation(logo_anim2);
+                    resolve.setEnabled(true);
+
                 }
             }
         });
